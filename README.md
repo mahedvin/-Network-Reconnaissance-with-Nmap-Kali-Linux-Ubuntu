@@ -64,6 +64,8 @@ sudo apt install openssh-server -y
 sudo systemctl start ssh
 sudo systemctl enable ssh
 ```
+<img width="1512" height="982" alt="Screenshot 2026-05-20 at 9 07 45 PM" src="https://github.com/user-attachments/assets/5d67f2f6-29bd-4a9e-88f8-6ce4d32c4b6c" />
+
 
 **Apache Web Server:**
 ```bash
@@ -71,6 +73,8 @@ sudo apt install apache2 -y
 sudo systemctl start apache2
 sudo systemctl enable apache2
 ```
+<img width="1512" height="982" alt="Screenshot 2026-05-20 at 9 14 59 PM" src="https://github.com/user-attachments/assets/2af39138-ef39-4251-be75-afe17676e170" />
+
 
 ### Verifying Connectivity
 
