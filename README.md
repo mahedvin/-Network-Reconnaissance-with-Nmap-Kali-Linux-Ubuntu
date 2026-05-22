@@ -1,5 +1,4 @@
-# -Network-Reconnaissance-with-Nmap-Kali-Linux-Ubuntu
-Using Nmap to perform network reconnaissance on an Ubuntu VM from Kali Linux, and applying defensive countermeasures based on findings.
+
 # 🔍 Network Reconnaissance with Nmap — Kali Linux & Ubuntu
 
 > Using Nmap to perform network reconnaissance on an Ubuntu VM from Kali Linux, and applying defensive countermeasures based on findings.
@@ -97,6 +96,7 @@ Discovers open ports and their associated services.
 ```bash
 nmap -sV 10.0.2.4
 ```
+
 Identifies the exact software and version running on each open port.
 
 ### 3. Aggressive Scan
@@ -121,6 +121,8 @@ PORT    STATE  SERVICE
 22/tcp  open   ssh
 80/tcp  open   http
 ```
+<img width="626" height="461" alt="Screenshot 2026-05-20 at 9 15 54 PM" src="https://github.com/user-attachments/assets/e2bd8633-0ce6-4f72-ab53-f6a3c6850bbd" />
+
 
 ### Version Scan Results (Before Hardening)
 
@@ -129,6 +131,8 @@ PORT    STATE  SERVICE  VERSION
 22/tcp  open   ssh      OpenSSH 10.2p1 Ubuntu 2ubuntu3.2 (Ubuntu Linux; protocol 2.0)
 80/tcp  open   http     Apache httpd 2.4.66 ((Ubuntu))
 ```
+<img width="1512" height="982" alt="Screenshot 2026-05-20 at 9 21 36 PM" src="https://github.com/user-attachments/assets/894792bc-99db-488b-953e-edc7bb6753c8" />
+
 
 ### Aggressive Scan Results (After Hardening)
 
@@ -139,6 +143,8 @@ PORT    STATE  SERVICE  VERSION
 
 MAC Address: 08:00:27:76:AC:25 (Oracle VirtualBox virtual NIC)
 ```
+<img width="1512" height="982" alt="Screenshot 2026-05-20 at 10 23 58 PM" src="https://github.com/user-attachments/assets/67d58af4-fbd3-45da-8d59-305f3c64ae3b" />
+
 
 ---
 
@@ -157,13 +163,17 @@ Changed the following values:
 ServerTokens Prod
 ServerSignature Off
 ```
+<img width="551" height="489" alt="Screenshot 2026-05-20 at 9 31 56 PM copy" src="https://github.com/user-attachments/assets/6ea1a153-5d7c-444a-a617-b32242507df5" />
+
 
 Then restarted Apache:
 ```bash
 sudo systemctl restart apache2
 ```
 
-**Result:** Running `nmap -sV` after this change showed `Apache httpd` with no version number — successfully hiding the version from attackers.
+**Result:** Running `nmap -sV` after this change showed `Apache httpd` with no version number — successfully hiding the version from attackers.  
+<img width="1512" height="982" alt="Screenshot 2026-05-20 at 9 45 23 PM" src="https://github.com/user-attachments/assets/4a358484-e41e-4e34-bd21-e9f6f4b1f78d" />
+
 
 ---
 
